@@ -1,10 +1,10 @@
 import Modal from './Componenents/ModalContainer/Modal';
 import { MainComponent } from "./Componenents/MainContenent/MainComponent";
+import {Quiz} from "./Componenents/QuizContainer/Quiz";
 function App() {
   return (
     <div className="App">
-      <MainComponent />
-      <Modal></Modal>
+      <Quiz></Quiz>
     </div>
   );
 }
