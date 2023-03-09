@@ -1,19 +1,43 @@
 import s from './Component.module.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { openQuiz } from '../../store/QuizSlice';
 
 export const MainComponent = () => {
+  const Quizes = useSelector((state) => state.Quiz.QuizesState);
+  const dispach = useDispatch();
+  const elem = Quizes.map((e) => {
+    return (
+      <div className={s.Wrapper__quizCard}>
+        <h2>{e.title}</h2>
+        <img src={e.avatar} alt="#" />
+        <span> Количество вопросов:{e.QuizState.length}</span>
+        <button key={e.id} onClick={() => HandleClicker(e.id)}>
+          Приступить
+        </button>
+      </div>
+    );
+  });
+
+  const HandleClicker = (key) => {
+    dispach(openQuiz(key));
+  };
+
   return (
     <section>
       <div className={s.Container}>
         <div className={s.Main__Wrapper}>
-          <div className={s.Wrapper__quizCard}>
-            <h2>Что такое реакт</h2>
-            <img
-              src="https://www.pinclipart.com/picdir/big/413-4132981_the-icon-depicts-three-circular-objects-orbiting-a.png"
-              alt=""
-            />
-            <span>Вопросов: 15</span>
-            <button>Приступить</button>
-          </div>
+          {Quizes.map((e) => {
+            return (
+              <div key={e.id} className={s.Wrapper__quizCard}>
+                <h2>{e.title}</h2>
+                <img src={e.avatar} alt="#" />
+                <span> Количество вопросов:{e.QuizState.length}</span>
+                <button key={e.id} onClick={() => HandleClicker(e.id)}>
+                  Приступить
+                </button>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
