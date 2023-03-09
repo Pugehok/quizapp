@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #e6e8ec;
+  }
+.modal {
+    
+    background-color: #fff;
+    width: 70%;
+    max-width: 500px;
+    max-height: 300px;
+    padding: 40px 30px;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease-in-out;
+
+    svg {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        height: 24px;
+        width: 24px;
+        opacity: 0.3;
+        cursor: pointer;
+    
+        &:hover {
+          opacity: 1;
+        }
+      }
+      h3{
+        vertical-align: bottom;
+        text-align: center;
+      }
+     &__text{
+        margin:30px;
+      }
+      &__quiz{
+        position: relative;
+        width: 9vh; 
+        margin: 0 auto; 
+        display: block;
+      }
+}
