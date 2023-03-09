@@ -16,6 +16,21 @@ const state = {
             questions: ['JavaScript', 'C#', 'Ернест'],
             correct_answer: 0}
         ]
+    }, {
+        id:1,
+        title: "C# quiz",
+        description: "Простой тест на минимальные знания C#",
+        avatar : 'https://w7.pngwing.com/pngs/686/952/png-transparent-computer-icons-c-software-development-others-text-rectangle-logo.png',
+        QuizState: [{
+            title: 'C#',
+            questions: ['Язык программированния', 'Тест', '1'],
+            correct_answer: 0
+        }, { 
+            title: 'Ты гнида',
+            questions: ['Да', 'Нет', 'Да'],
+            correct_answer: 1}
+        ]
+
     }
         
     ]
