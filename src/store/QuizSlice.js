@@ -16,14 +16,14 @@ const state = {
             title: 'Какой язык используется в реакте',
             questions: ['JavaScript', 'C#', 'Ернест'],
             correct_answer: 0}
-        ]
+    ]
     }, {
         id:2,
         title: "C# quiz",
         description: "Простой тест на минимальные знания C#",
         avatar : 'https://w7.pngwing.com/pngs/686/952/png-transparent-computer-icons-c-software-development-others-text-rectangle-logo.png',
         QuizState: [{
-            title: 'C#',
+            title: 'C# - это',
             questions: ['Язык программированния', 'Тест', '1'],
             correct_answer: 0
         }, { 
