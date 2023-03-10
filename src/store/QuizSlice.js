@@ -15,7 +15,11 @@ const state = {
         }, { 
             title: 'Какой язык используется в реакте',
             questions: ['JavaScript', 'C#', 'Ернест'],
-            correct_answer: 0}
+            correct_answer: 0
+        },{ 
+                title: 'vopros 3',
+                questions: ['JavaScript', 'C#', 'Ернест'],
+                correct_answer: 0}
     ]
     }, {
         id:2,
@@ -29,11 +33,9 @@ const state = {
         }, { 
             title: 'Ты гнида',
             questions: ['Да', 'Нет', 'Да'],
-            correct_answer: 1},
-            { 
-                title: 'Ты гнида2',
-                questions: ['Да1', 'Нет2', 'Да3'],
-                correct_answer: 1}
+            correct_answer: 1
+        }
+        
         ]
 
     }
@@ -52,6 +54,7 @@ const quizSlice = createSlice({
         closeQuiz: (state) =>{
             state.CurrentQuiz = null;
         }
+
     }
 })
 
