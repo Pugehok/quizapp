@@ -53,6 +53,7 @@ const quizSlice = createSlice({
             state.CurrentQuiz = state.QuizesState.find((e)=> e.id === action.payload )
         },
         closeQuiz: (state) =>{
+            state.isStartedQuiz = false;
             state.CurrentQuiz = null;
         },
         startQuiz: (state, action) =>{
