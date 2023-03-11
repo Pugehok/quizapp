@@ -53,6 +53,9 @@ const quizSlice = createSlice({
         },
         closeQuiz: (state) =>{
             state.CurrentQuiz = null;
+        },
+        startQuiz: (state, action) =>{
+            state.CurrentQuiz = state.CurrentQuiz.QuizState
         }
 
     }
@@ -61,4 +64,4 @@ const quizSlice = createSlice({
 
 export default quizSlice.reducer
 
-export const  {openQuiz, closeQuiz} = quizSlice.actions
+export const  {openQuiz, closeQuiz, startQuiz} = quizSlice.actions
