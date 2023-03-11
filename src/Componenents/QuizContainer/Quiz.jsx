@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { closeQuiz } from '../../store/QuizSlice';
 import React, { useState } from 'react';
 import s from './quizComponent.module.scss';
-
+// add test
 export const Quiz = () => {
   let [CurrentQuiz, setCurrentQuiz] = useState(0);
   let [answers, setAnwser] = useState([]);
