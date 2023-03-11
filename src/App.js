@@ -6,15 +6,17 @@ import { useDispatch, useSelector } from 'react-redux';
 function App() {
 
   const currentState = useSelector((state) => state.Quiz.CurrentQuiz);
+  const isStartedQuiz = useSelector((state) => state.Quiz.isStartedQuiz);
   return (
     <div className="App">
-      {currentState && currentState.id? (
-      <div> 
+      {!isStartedQuiz? (
+      <> 
         <MainComponent />
          <Modal /> 
-      </div> 
-      ): <MainComponent />   } 
-      
+      </>)
+      :
+      <Quiz />
+      } 
     </div>
   );
 }

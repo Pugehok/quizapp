@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const state = {
     CurrentQuiz: null,
+    isStartedQuiz: false,
     QuizesState: [{
         id:1,
         title: "React Quiz",
@@ -55,6 +56,7 @@ const quizSlice = createSlice({
             state.CurrentQuiz = null;
         },
         startQuiz: (state, action) =>{
+            state.isStartedQuiz = true;
             state.CurrentQuiz = state.CurrentQuiz.QuizState
         }
 
