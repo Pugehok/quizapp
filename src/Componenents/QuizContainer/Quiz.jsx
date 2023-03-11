@@ -57,6 +57,7 @@ export const Quiz = () => {
                     </li>
                   );
                 })}
+                <h1>ВЫ ОЧЕНЬ ЛЮБИТЕ ВАРЮ🥰😍💗</h1>
               </div>
               <button onClick={() => buttonExit()}>Выйти</button>
             </div>
