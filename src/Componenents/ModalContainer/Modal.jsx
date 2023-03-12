@@ -1,19 +1,22 @@
-import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { closeQuiz } from '../../store/QuizSlice';
+import { closeQuiz, startQuiz } from '../../store/QuizSlice';
 import './ModalComponent.scss';
 
 function Modal() {
   const active = useSelector((state) => state.Quiz.CurrentQuiz);
-  console.log(active);
+
   const dispach = useDispatch();
   const Handler = () => {
     dispach(closeQuiz());
   };
 
+  const startOnQuiz = (k) => {
+    dispach(startQuiz(k));
+  };
+
   return (
     <div>
-      {active && (
+      {active ? (
         <div className="overlay">
           <div className="modal">
             <svg onClick={() => Handler()} height="200" viewBox="0 0 200 200" width="200">
@@ -21,11 +24,15 @@ function Modal() {
             </svg>
             <h3>{active.title}</h3>
             <div className="modal__text">
-              <a>{active.description}</a>
+              <span>{active.description}</span>
             </div>
-            <button className="modal__quiz">Start quiz</button>
+            <button className="modal__quiz" onClick={() => startOnQuiz(active.id)}>
+              Start quiz
+            </button>
           </div>
         </div>
+      ) : (
+        <div></div>
       )}
     </div>
   );

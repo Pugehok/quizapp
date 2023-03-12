@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const state = {
     CurrentQuiz: null,
+    isStartedQuiz: false,
     QuizesState: [{
         id:1,
         title: "React Quiz",
@@ -35,7 +36,32 @@ const state = {
             questions: ['Да', 'Нет', 'Да'],
             correct_answer: 1
         }
-        
+        ]
+
+    },
+    {
+        id:3,
+        title: "Насколько сильню я люблю Варю 🥰",
+        description: "Тест для определения насколько я люблю Варю",
+        avatar : 'https://sun9-67.userapi.com/impg/mmwKC_Fbs_vgqwvui7ygPKgRTKyWpUT0bQxWpQ/3d4jART8SnI.jpg?size=1215x2160&quality=95&sign=e86daec543f93e4d18a0edbc3a8bbcba&type=album',
+        QuizState: [{
+            title: 'Кто моя Варечка 💗',
+            questions: ['Заечка', 'Лучик', 'Все ответы правильные'],
+            correct_answer: 2
+        }, { 
+            title: 'Какая Варя сегодня 💗',
+            questions: ['Хорошая', 'Злая', 'Хорошая и злая'],
+            correct_answer: 2
+        },{
+            title: 'Как зовут Вариного парня💗',
+            questions: ['Саша Рогоносцев', 'Чурка', 'Валя Гипопотамов', 'Димочка'],
+            correct_answer: 3
+        },{
+            
+            title: 'Кого любит Варя💗',
+            questions: ['Саша Рогоносцев', 'Чурка', 'Валя Гипопотамов', 'Димочка'],
+            correct_answer: 3
+        }
         ]
 
     }
@@ -52,7 +78,12 @@ const quizSlice = createSlice({
             state.CurrentQuiz = state.QuizesState.find((e)=> e.id === action.payload )
         },
         closeQuiz: (state) =>{
+            state.isStartedQuiz = false;
             state.CurrentQuiz = null;
+        },
+        startQuiz: (state, action) =>{
+            state.isStartedQuiz = true;
+            state.CurrentQuiz = state.CurrentQuiz.QuizState
         }
 
     }
@@ -61,4 +92,4 @@ const quizSlice = createSlice({
 
 export default quizSlice.reducer
 
-export const  {openQuiz, closeQuiz} = quizSlice.actions
+export const  {openQuiz, closeQuiz, startQuiz} = quizSlice.actions
