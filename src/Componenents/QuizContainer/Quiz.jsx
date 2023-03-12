@@ -49,7 +49,7 @@ export const Quiz = () => {
               <div>
                 {Quizes.map((e, index) => {
                   return (
-                    <li>
+                    <li className={answers[index] === e.correct_answer ? s.active : s.red}>
                       <span>Вопрос номер {index + 1} </span>
                       <p>{e.title}</p>
                       <p>Ваш ответ:{e.questions[answers[index]]}</p>
