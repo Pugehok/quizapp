@@ -4,8 +4,6 @@ import './ModalComponent.scss';
 
 function Modal() {
   const active = useSelector((state) => state.Quiz.CurrentQuiz);
-  
-
 
   const dispach = useDispatch();
   const Handler = () => {
