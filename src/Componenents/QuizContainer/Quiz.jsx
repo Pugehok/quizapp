@@ -40,22 +40,46 @@ export const Quiz = () => {
   //! Если срабатывает условие равности, выводит первый блок, в обратном случае второй
   return (
     <div>
-    { 
-      QuizArray[test]   ?(
-      <div className={s.Quiz}>
-        
-      <div className={s.progress}>
-        <div style={{ width: `${percentage}%`}} className={s.progress__inner}></div>
-      </div>
-      
-      {test}
-      <h2>{QuizArray[test].title}</h2>
-      <ul>{Quizes}</ul>
-    </div>
-      ):(
-        <div>{console.log("test prioden")}</div>
-      )
-    }
+      {answers.length === Quizes.length ? (
+        <div className={s.Quiz}>
+          <div className={s.progress}>
+            <div style={{ width: `${percentage}%` }} className={s.progress__inner}></div>
+            <div>
+              {<Correct />}
+              <div>
+                {Quizes.map((e, index) => {
+                  return (
+                    <li>
+                      <span>Вопрос номер {index + 1} </span>
+                      <p>{e.title}</p>
+                      <p>Ваш ответ:{e.questions[answers[index]]}</p>
+                      <p>Правильный ответ:{e.questions[e.correct_answer]}</p>
+                    </li>
+                  );
+                })}
+                <h1>ВЫ ОЧЕНЬ ЛЮБИТЕ ВАРЮ🥰😍💗</h1>
+              </div>
+              <button onClick={() => buttonExit()}>Выйти</button>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div className={s.Quiz}>
+          <div className={s.progress}>
+            <div style={{ width: `${percentage}%` }} className={s.progress__inner}></div>
+          </div>
+          <h2>{Quizes[CurrentQuiz].title}</h2>
+          <ul>
+            {Quizes[CurrentQuiz].questions.map((e, index) => {
+              return (
+                <li key={index} onClick={() => HandlerAnswser(index)}>
+                  {e}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )}
     </div>
   );
 };
