@@ -37,7 +37,8 @@ export const Quiz = () => {
   return (
     <div>
     { 
-      QuizArray[test]   ?(
+      QuizArray[test]  
+       ?(
       <div className={s.Quiz}>
         
       <div className={s.progress}>
