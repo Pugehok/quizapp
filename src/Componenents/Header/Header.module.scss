@@ -1,0 +1,24 @@
+header {
+  width: 95vw;
+  height: 2vh;
+  display: flex;
+  justify-content: flex-end;
+  .header__nav {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    background-color: azure;
+    width: 30vw;
+    height: 2.5vh;
+    border-radius: 10%;
+
+    li {
+      margin-right: 1vw;
+
+      span {
+        color: black;
+        cursor: pointer;
+      }
+    }
+  }
+}

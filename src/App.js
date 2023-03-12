@@ -1,7 +1,7 @@
 import Modal from './Componenents/ModalContainer/Modal';
 import { MainComponent } from "./Componenents/MainContenent/MainComponent";
 import {Quiz} from "./Componenents/QuizContainer/Quiz";
-
+import { Header } from './Componenents/Header/HeaderComponent';
 import { useDispatch, useSelector } from 'react-redux';
 function App() {
 
@@ -11,6 +11,7 @@ function App() {
     <div className="App">
       {!isStartedQuiz? (
       <> 
+      <Header />
         <MainComponent />
          <Modal /> 
       </>)
