@@ -21,7 +21,7 @@ export const MainComponent = () => {
                 <h2>{e.title}</h2>
                 <img src={e.avatar} alt="#" />
                 <span> Количество вопросов:{e.QuizState.length}</span>
-                <button key={e.id} onClick={(event) => HandleClicker(event, e.id)}>
+                <button key={e.id} onClick={(event) => HandleClicker(event, e.id) }>
                   Приступить
                 </button>
               </div>
