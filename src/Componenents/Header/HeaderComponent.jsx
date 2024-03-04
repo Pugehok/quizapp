@@ -2,6 +2,7 @@ import s from './Header.module.scss';
 import { useState } from 'react';
 export const Header = () => {
   const [isCreated, setIsCreated] = useState(false);
+
   const createHandler = () => {
     setIsCreated(!isCreated);
   };
